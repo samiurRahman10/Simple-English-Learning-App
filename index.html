@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- Font Awesome CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+        integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- Tailwind DaisyUi CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <!-- Fonts CDN -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@300;400;500;600;700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+    <!-- StyleSheet -->
+    <link rel="stylesheet" href="./style/style.css">
+</head>
+
+<body>
+    <header>
+        <!-- Nav -->
+        <nav>
+            <div class="navbar bg-sky-100 shadow-sm">
+                <!-- Nav Start -->
+                <div class="navbar-start">
+                    <div class="dropdown">
+                        <div tabindex="0" role="button" class="btn btn-ghost lg:hidden">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24"
+                                stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M4 6h16M4 12h8m-8 6h16" />
+                            </svg>
+                        </div>
+                    </div>
+                    <a class="flex items-center space-x-1"><span class="font-semibold text-xl">English</span> <span><img
+                                src="./assets/logo.png" alt=""></span> <span>জানালা</span></a>
+                </div>
+                <!-- Nav End -->
+                <div class="navbar-end hidden lg:flex">
+                    <ul class="menu menu-horizontal px-1 space-x-4">
+                        <li><a class="btn btn-outline btn-primary"><i class="fa-solid fa-circle-question"></i> FAQ</a>
+                        </li>
+                        <li><a class="btn btn-outline btn-primary"><i class="fa-solid fa-book-open"></i> Learn</a></li>
+                        <li><a class="btn btn-outline btn-primary"><i class="fa-solid fa-right-from-bracket"></i>
+                                LogOut</a></li>
+                    </ul>
+                </div>
+
+            </div>
+        </nav>
+        <!-- Banner Section -->
+        <section class="flex flex-col-reverse md:flex-row gap-8 justify-between items-center w-11/12 mx-auto">
+            <div class="content w-full md:w-[50%]">
+                <h1 class="text-4xl font-bold mb-5"><span class="text-sky-400">English</span> is Easy!</h1>
+                <p class="font-medium text-justify">নোমান আজ থেকেই ভাষা শেখার যাত্রা শুরু হোক তোমার।আমি জানি তুমি নতুন তাই তোমার দক্ষতা বাড়াতে ,এই Interactive Lessons ...
+                </p>
+               
+            </div>
+            <div class="img w-full md:w-[50%]">
+                <img class="mx-auto" src="./assets/learning-english-doodle-set-language-school-in-sketch-style-online-language-education-course-hand-drawn-illustration-isolated-on-white-background-vector.jpg" alt="">
+            </div>
+        </section>
+
+    </header>
+    <main>
+        <!-- Lets Learn Vocabulary -->
+        <section class="mt-14">
+            <h1 class="text-4xl font-bold mb-8 text-center"><span class="text-sky-400">Let's</span> Learn Vocabulary
+            </h1>
+            <!-- Vocabulary Level Card -->
+            <div id="vocabulary-section-card-container" class="flex gap-4 justify-center flex-wrap mb-8"> </div>
+            <!-- Loading -->
+            <section id="loading" class="flex justify-center items-center hidden">
+                <span class="loading loading-spinner loading-xl"></span>
+            </section>
+            <!-- Search -->
+            <div class="join flex justify-center">
+                <div>
+                    <label class="input validator join-item">
+                        <input id="search-field" placeholder="Search Your Words" />
+                    </label>
+                </div>
+                <button id="search-btn" class="btn btn-primary">Search</button>
+            </div>
+            <!-- Word Card -->
+            <div id="vocabulary-section-word-card-container"
+                class="bg-gray-100 w-11/12 mx-auto p-8 my-6 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 rounded-xl">
+                <!-- Card -->
+                <div class="col-span-full text-center space-y-4 my-4">
+                    <p class="text-sm text-[#79716B]">নোমান তুমি এখনো কোন Lesson Select করো নাই</p>
+                    <h2 class="bangla-font font-medium text-4xl">Lesson বাটনে ক্লিক করে একটা Lesson Select করো।</h2>
+                </div>
+            </div>
+        </section>
+
+        <!-- Open the modal using ID.showModal() method -->
+        <dialog id="word_modal" class="modal modal-bottom sm:modal-middle">
+            <div class="modal-box">
+                <div id="details-container" class="space-y-5">
+
+                </div>
+                <div class="modal-action">
+                    <form method="dialog">
+                        <!-- if there is a button in form, it will close the modal -->
+                        <button class="btn">Close</button>
+                    </form>
+                </div>
+            </div>
+        </dialog>
+
+    </main>
+    <script src="./script/script.js"></script>
+</body>
+
+</html>
